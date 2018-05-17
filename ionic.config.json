@@ -1,0 +1,8 @@
+{
+  "name": "micuco",
+  "app_id": "ddd2f970",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
