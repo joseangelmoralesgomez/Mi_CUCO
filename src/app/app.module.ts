@@ -4,37 +4,63 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { ConfigPage } from '../pages/config/config';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import { Pagina01Page, Pagina02Page, Pagina03Page, Pagina04Page, Pagina05Page, Pagina06Page } from "../pages/index.pages";
+
+// Plugins
+import { IonicStorageModule } from '@ionic/storage';
+import { Camera } from '@ionic-native/camera';
+
+// Servicios
+import { AlmacenService } from '../providers/almacen/almacen';
+
+
+
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    ConfigPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    Pagina01Page,
+    Pagina02Page,
+    Pagina03Page,
+    Pagina04Page,
+    Pagina05Page,
+    Pagina06Page
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    ConfigPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    Pagina01Page,
+    Pagina02Page,
+    Pagina03Page,
+    Pagina04Page,
+    Pagina05Page,
+    Pagina06Page
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Camera,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AlmacenService
   ]
 })
 export class AppModule {}

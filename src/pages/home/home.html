@@ -1,17 +1,66 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color=primary>
+    <ion-title>Mi CUCO</ion-title>
+    <ion-buttons end>
+      <button ion-button
+              [navPush]="acerca_de">
+          Acerca de
+      </button>
+        <button ion-button
+                *ngIf="muestra_botones"
+                (click)="muestra_botones=false">
+            Finalizar
+        </button>
+        <button ion-button
+                *ngIf="!muestra_botones"
+                (click)="muestra_botones=true">
+            Configurar
+        </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content class="card-background-page">
+
+      <ion-card *ngFor="let picto of this._almacen.pictos; let i=index">
+
+        <img [src]="picto.img"
+             (click)="irAPagina( picto )"/>
+
+        <ion-card-content text-align: center
+                          (click)="irAPagina( picto )">
+            <h1><strong>{{picto.nombre}}</strong></h1>
+        </ion-card-content>
+
+        <ion-row *ngIf="muestra_botones">
+
+         <ion-col text-left>
+           <button ion-button icon-left clear small
+                   (click)="cambiarPicto(i)">
+             <ion-icon name="text"></ion-icon>
+             <div>Cambiar Picto</div>
+           </button>
+         </ion-col>
+
+         <ion-col text-right>
+           <button ion-button icon-left clear small
+                   (click)="borrarPicto( i )">
+             <ion-icon name="thumbs-up"></ion-icon>
+             <div>Borrar</div>
+           </button>
+         </ion-col>
+
+        </ion-row>
+
+    </ion-card>
+
+    <ion-fab right bottom>
+        <button ion-fab
+                color="danger"
+                (click)="mostar_modal()">
+                <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+
+
 </ion-content>
