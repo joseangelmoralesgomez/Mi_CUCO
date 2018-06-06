@@ -26,7 +26,7 @@ export class AlmacenService {
                         console.log('Storage Listo')
                         this.storage.get("pictos")
                             .then( pictos=>{
-                                if (this.pictos.length > 0){
+                                if (this.pictos){
                                     this.pictos=pictos;
                                     resolve();
                                 }else{

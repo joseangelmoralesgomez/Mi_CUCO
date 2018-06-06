@@ -1,14 +1,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Añadir foto</ion-title>
-    <ion-buttons end>
+    <ion-title>Añadir nuevo Picto</ion-title><br>
+    <ion-buttons>
         <button ion-button
-
                 (click)="cerrar_modal()">
             Cerrar
         </button>
     </ion-buttons>
+
+    <ion-buttons end>
+        <button ion-button (click)="guardar_picto()">
+            Añadir Picto
+        </button>
+    </ion-buttons>
+
   </ion-navbar>
 
 </ion-header>
@@ -18,10 +24,10 @@
     <ion-list>
         <ion-item>
             <ion-label floating>Nombre del Picto</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="titulo"></ion-input>
         </ion-item>
-        <ion-item  text-center *ngIf="imgPreview">
-            <img [src]="imgPreview">
+        <ion-item  text-center *ngIf="imgURI">
+            <img [src]="imgURI">
         </ion-item>
     </ion-list>
 

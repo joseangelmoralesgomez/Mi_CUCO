@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
 
-import { Picto } from "../../interfaces/picto.inteface";
 import { AlmacenService } from "../../providers/almacen/almacen";
 
 @IonicPage()
@@ -12,8 +11,9 @@ import { AlmacenService } from "../../providers/almacen/almacen";
     templateUrl: 'config.html',
 })
 export class ConfigPage {
-    titulo: string;
-    imgPreview: string;
+    titulo: string = "";
+    imgPreview: string = "";
+    imgURI: string = "";
 
     constructor(public navCtrl: NavController,
                 public navParams: NavParams,
@@ -22,57 +22,78 @@ export class ConfigPage {
                 public _almacen: AlmacenService ) {
     }
 
-        cerrar_modal(){
+    cerrar_modal(){
         this.viewCtrl.dismiss();
     }
+
     mostrar_camara(){
         const options: CameraOptions = {
           quality: 50,
-          destinationType: this.camera.DestinationType.DATA_URL,
+          destinationType: this.camera.DestinationType.FILE_URI,
           encodingType: this.camera.EncodingType.JPEG,
-          mediaType: this.camera.MediaType.PICTURE
+          mediaType: this.camera.MediaType.PICTURE,
+          saveToPhotoAlbum: true
         }
 
         this.camera.getPicture(options).then((imageData) => {
          // imageData is either a base64 encoded string or a file URI
          // If it's base64:
         this.imgPreview = 'data:image/jpeg;base64,' + imageData;
+        this.imgURI = imageData;
+        console.log("la imageData:", imageData);
+        console.log("la imgURI:", this.imgURI);
         }, (err) => {
          // Handle error
          console.log("Error en cámara", JSON.stringify(err));
         });
     }
+
 
     seleccionar_imagen_camara(){
         const options: CameraOptions = {
           quality: 50,
-          destinationType: this.camera.DestinationType.DATA_URL,
+          destinationType: this.camera.DestinationType.NATIVE_URI,
           encodingType: this.camera.EncodingType.JPEG,
           mediaType: this.camera.MediaType.PICTURE,
-          sourceType: this.camera.PictureSourceType.PHOTOLIBRARY
+          sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
+          saveToPhotoAlbum: true
         }
 
         this.camera.getPicture(options).then((imageData) => {
          // imageData is either a base64 encoded string or a file URI
          // If it's base64:
         this.imgPreview = 'data:image/jpeg;base64,' + imageData;
+        this.imgURI = imageData;
+        console.log("la imageData:", imageData);
+        console.log("la imgURI:", this.imgURI);
         }, (err) => {
          // Handle error
          console.log("Error en cámara", JSON.stringify(err));
         });
-        return this.imgPreview;
     }
 
-    componer_picto(){
-        
-    }
 
-    guardar_picto(index:number){
-        console.log (index);
-        this._almacen.pictos.splice(index,1);
-        this._almacen.pictos.splice(
-        this._almacen.pictos.indexOf(this._almacen.pictos), 0,this.imgPreview );
+    guardar_picto( ){
+        let picto = {
+            img: this.imgURI,
+            nombre: this.titulo
+        }
+        console.log ("guardando picto:", picto.img, picto.nombre);
+
+        this._almacen.pictos.splice(this._almacen.pictos.length, 0,picto);
         this._almacen.guardar_storage();
+        console.log ("guardado en el almacén", this._almacen);
+        this.cerrar_modal()
     }
+
+
+
+
+
+
+
+
+
+
 
 }
