@@ -46,9 +46,8 @@ export class AlmacenService {
             }
             console.log('Fin Cargar Storage sólo queda devolver la promesa')
         });
-        console.log('La promesa');
+        console.log("Devolviendo lapromesa", localStorage);
         return lapromesa;
-
     }
 
 
@@ -58,13 +57,12 @@ export class AlmacenService {
             this.storage.ready()
                 .then(()=>{
                     this.storage.set("pictos", this.pictos)
-                })
+                });
+            console.log("Fin de guardar_storage", this.storage)
         }else{
             // Estamos en el un navegador
             localStorage.setItem("pictos", JSON.stringify(this.pictos));
+            console.log("Fin de guardar_storage", localStorage)
         }
     }
-
-
-
 }

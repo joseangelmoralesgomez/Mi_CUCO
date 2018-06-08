@@ -16,6 +16,7 @@ import { Pagina01Page, Pagina02Page, Pagina03Page, Pagina04Page, Pagina05Page, P
 // Plugins
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
 
 // Servicios
 import { AlmacenService } from '../providers/almacen/almacen';
@@ -59,6 +60,7 @@ import { AlmacenService } from '../providers/almacen/almacen';
     StatusBar,
     SplashScreen,
     Camera,
+    ImagePicker,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AlmacenService
   ]
