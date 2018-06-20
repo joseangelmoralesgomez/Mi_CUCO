@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
 
 import { AlmacenService } from "../../providers/almacen/almacen";
 
@@ -21,6 +23,8 @@ export class ConfigPage {
                 public viewCtrl: ViewController,
                 private camera: Camera,
                 private imagePicker: ImagePicker,
+                private fileChooser: FileChooser,
+                private filePath: FilePath,
                 public _almacen: AlmacenService ) {
     }
 
@@ -51,14 +55,15 @@ export class ConfigPage {
     }
 
 
+
+
     seleccionar_imagen_camara(){
         const options: CameraOptions = {
           quality: 50,
-          destinationType: this.camera.DestinationType.FILE_URI,
+          destinationType: this.camera.DestinationType.NATIVE_URI,
           encodingType: this.camera.EncodingType.JPEG,
           mediaType: this.camera.MediaType.PICTURE,
           sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
-          saveToPhotoAlbum: true
         }
 
         this.camera.getPicture(options).then((imageData) => {
@@ -91,6 +96,21 @@ export class ConfigPage {
             console.log("Error en selección de imágenes", JSON.stringify(err));
         });
     }
+
+    seleccionar_fichero(){
+        this.fileChooser.open().then((imageData) => {
+        alert('uri'+JSON.stringify(imageData));
+        // get file path
+        		this.filePath.resolveNativePath(imageData)
+        		.then(file => {
+        			alert('file'+JSON.stringify(file));
+         			this.imgURI = file;
+        		})
+        		.catch(err => console.log(err));
+        	})
+        	.catch(e => alert('uri'+JSON.stringify(e)));
+    }
+
 
 
     guardar_picto( ){
