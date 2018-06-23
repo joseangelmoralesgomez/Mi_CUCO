@@ -23,43 +23,35 @@
 <ion-content class="card-background-page">
 
       <ion-card *ngFor="let picto of this._almacen.pictos; let i=index">
-        <img [src]="picto.img"
-             (click)="irAPagina( picto )"/>
+        <div *ngIf="picto.pagina==0">
+          <img [src]="picto.img"
+               (click)="irAPagina( picto )"/>
 
-        <ion-card-content text-align: center
-                          (click)="irAPagina( picto )">
-            <h1><strong>{{picto.nombre}}</strong></h1>
-        </ion-card-content>
+          <ion-card-content text-align: center
+                            (click)="irAPagina( picto )">
+              <h1><strong>{{picto.nombre}}</strong></h1>
+          </ion-card-content>
 
-        <ion-row *ngIf="muestra_botones">
+          <ion-row *ngIf="muestra_botones">
 
-         <ion-col text-left>
-           <button ion-button icon-left clear small
-                   (click)="cambiarPicto(i)">
-             <ion-icon name="text"></ion-icon>
-             <div>Cambiar Picto</div>
-           </button>
-         </ion-col>
+           <ion-col text-left>
+             <button ion-button icon-left clear small
+                     (click)="cambiarPicto(i)">
+               <ion-icon name="text"></ion-icon>
+               <div>Cambiar Picto</div>
+             </button>
+           </ion-col>
 
-         <ion-col text-right>
-           <button ion-button icon-left clear small
-                   (click)="borrarPicto( i )">
-             <ion-icon name="thumbs-up"></ion-icon>
-             <div>Borrar</div>
-           </button>
-         </ion-col>
+           <ion-col text-right>
+             <button ion-button icon-left clear small
+                     (click)="borrarPicto( i )">
+               <ion-icon name="thumbs-up"></ion-icon>
+               <div>Borrar</div>
+             </button>
+           </ion-col>
 
-        </ion-row>
-
+          </ion-row>
+        </div>
     </ion-card>
-
-    <ion-fab right bottom>
-        <button ion-fab
-                color="danger"
-                (click)="mostar_modal()">
-                <ion-icon name="add"></ion-icon>
-        </button>
-    </ion-fab>
-
 
 </ion-content>

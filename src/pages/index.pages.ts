@@ -1,9 +1,6 @@
 export { HomePage } from "./home/home";
+export { TabsPage } from "./tabs/tabs";
 export { AboutPage } from "./about/about";
 export { ConfigPage } from "./config/config";
-export { Pagina01Page } from "./pagina01/pagina01";
-export { Pagina02Page } from "./pagina02/pagina02";
-export { Pagina03Page } from "./pagina03/pagina03";
-export { Pagina04Page } from "./pagina04/pagina04";
-export { Pagina05Page } from "./pagina05/pagina05";
-export { Pagina06Page } from "./pagina06/pagina06";
+export { PaginaPage } from "./pagina/pagina";
+export { AddpictoPage } from "./addpicto/addpicto"

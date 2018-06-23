@@ -1,5 +1,6 @@
 export interface Picto{
   nombre: string;
   img: string;
-  posicion?: string;
+  posicion?: number;
+  pagina?: number;
 }

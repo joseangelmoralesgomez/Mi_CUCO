@@ -3,7 +3,7 @@ import { NavController, ModalController } from 'ionic-angular';
 
 // import { PICTOS } from "../../data/dataHome.pictos";
 import { Picto } from "../../interfaces/picto.inteface";
-import { Pagina01Page, Pagina02Page, Pagina03Page, Pagina04Page, Pagina05Page, Pagina06Page, AboutPage, ConfigPage } from "../../pages/index.pages";
+import { PaginaPage, AboutPage, ConfigPage } from "../../pages/index.pages";
 
 import { AlmacenService } from "../../providers/almacen/almacen";
 
@@ -22,32 +22,7 @@ export class HomePage {
   }
 
   irAPagina ( picto : Picto ){
-     switch(picto.posicion) {
-        case "01": {
-          this.navCtrl.push (Pagina01Page, {"picto":picto});
-          break;
-        }
-        case "02": {
-          this.navCtrl.push (Pagina02Page, {"picto":picto});
-          break;
-        }
-        case "03": {
-          this.navCtrl.push (Pagina03Page, {"picto":picto});
-          break;
-        }
-        case "04": {
-          this.navCtrl.push (Pagina04Page, {"picto":picto});
-          break;
-        }
-        case "05": {
-          this.navCtrl.push (Pagina05Page, {"picto":picto});
-          break;
-        }
-        case "06": {
-          this.navCtrl.push (Pagina06Page, {"picto":picto});
-          break;
-        }
-      }
+      this.navCtrl.push (PaginaPage, {"picto":picto})
   }
 
   cambiarPicto (index:number){
@@ -64,15 +39,10 @@ export class HomePage {
 
   }
 
-  mostar_modal(){
-      let modal = this.modalCtrl.create(ConfigPage);
-      modal.present();
-  }
-
-  saltar_intro(){
-//    this._almacen.intro.mostar_intro=false;
+/*  saltar_intro(){
+    this._almacen.intro.mostar_intro=false;
 
     this.navCtrl.setRoot (HomePage);
-  }
+}*/
 
 }

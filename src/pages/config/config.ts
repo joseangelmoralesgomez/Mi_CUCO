@@ -126,14 +126,4 @@ export class ConfigPage {
         this.cerrar_modal()
     }
 
-
-
-
-
-
-
-
-
-
-
 }
