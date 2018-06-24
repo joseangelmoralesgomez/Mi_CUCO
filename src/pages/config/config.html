@@ -1,58 +1,42 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Añadir nuevo Picto</ion-title><br>
-    <ion-buttons>
+    <ion-title>Configuración Mi CUCO</ion-title>
+    <ion-buttons end>
         <button ion-button
                 (click)="cerrar_modal()">
             Cerrar
         </button>
     </ion-buttons>
-
-    <ion-buttons end>
-        <button ion-button (click)="guardar_picto()">
-            Añadir Picto
-        </button>
-    </ion-buttons>
-
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <ion-list>
-        <ion-item>
-            <ion-label floating>Nombre del Picto</ion-label>
-            <ion-input type="text" [(ngModel)]="titulo"></ion-input>
-        </ion-item>
-        <ion-item  text-center *ngIf="imgURI">
-            <img [src]="imgURI">
-        </ion-item>
-    </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src = "../../assets/pictos/MiCUCO.jpg"
+             [navPush]="paginaHome"/>
+      </ion-avatar>
+      <h2 [navPush]="configHome">Configurar: Página principal</h2>
+    </ion-item>
+    <span *ngFor="let picto of this._almacen.pictos; let i=index">
+      <ion-item *ngIf="picto.pagina==0">
+        <ion-avatar item-start>
+          <img [src]="picto.img"
+               (click)="configurarPagina( picto )"/>
+        </ion-avatar>
+        <h2 (click)="configurarPagina( picto )">Configurar:  {{picto.nombre}}</h2>
+      </ion-item>
+    </span>
+  </ion-list>
 
-    <ion-grid>
-        <ion-row>
-            <ion-col>
-                <button ion-button
-                        block
-                        icon-left
-                        (click)="seleccionar_fichero()">
-                    <ion-icon name="photos"></ion-icon>
-                    Seleccionar
-                </button>
-            </ion-col>
-
-            <ion-col>
-                <button ion-button
-                        block
-                        icon-left
-                        (click)="mostrar_camara()">
-                    <ion-icon name="camera"></ion-icon>
-                    Cámara
-                </button>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+  <button ion-button
+          block
+          [navPush]="acerca_de">
+      <ion-icon name="eye"> A cerca de Mi CUCO</ion-icon>
+  </button>
 
 </ion-content>

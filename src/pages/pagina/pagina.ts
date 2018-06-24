@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
 import { Picto } from "../../interfaces/picto.inteface"
-import { ConfigPage, AddpictoPage } from "../../pages/index.pages";
+import { AddpictoPage } from "../../pages/index.pages";
 import { AlmacenService } from "../../providers/almacen/almacen";
 
 @IonicPage()

@@ -15,6 +15,7 @@ export class HomePage {
 //  pictos:Picto[] = [];
   muestra_botones:boolean = false;
   acerca_de:any = AboutPage;
+  configuracion:any = ConfigPage;
 
   constructor(public navCtrl: NavController,
               public modalCtrl: ModalController,
