@@ -1,18 +1,36 @@
-<!--
-  Generated template for the ConfigHomePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
     <ion-title>config-home</ion-title>
+    <ion-buttons end>
+        <button ion-button
+                (click)="cerrar_modal()">
+            Cerrar
+        </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-list reorder="true" (ionItemReorder)="reordenar( $event )">
+    <ion-item-sliding  *ngFor="let picto of this._almacen.pictos; let i=index">
 
+        <ion-item *ngIf="picto.pagina==0">
+          <ion-avatar item-start>
+            <img [src]="picto.img"/>
+          </ion-avatar>
+          <h2>{{picto.nombre}}</h2>
+        </ion-item>
+
+        <ion-item-options side="right">
+          <button ion-button color="secondary">
+            <ion-icon name="images"></ion-icon>
+            Cambiar Picto
+          </button>
+        </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>

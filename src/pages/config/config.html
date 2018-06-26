@@ -13,7 +13,8 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
   <ion-list>
     <ion-item>
       <ion-avatar item-start>
@@ -22,15 +23,15 @@
       </ion-avatar>
       <h2 [navPush]="configHome">Configurar: Página principal</h2>
     </ion-item>
-    <span *ngFor="let picto of this._almacen.pictos; let i=index">
+    <ion-item-sliding *ngFor="let picto of this._almacen.pictos; let i=index">
       <ion-item *ngIf="picto.pagina==0">
         <ion-avatar item-start>
           <img [src]="picto.img"
-               (click)="configurarPagina( picto )"/>
+               (click)="irAConfigurarPagina( picto )"/>
         </ion-avatar>
-        <h2 (click)="configurarPagina( picto )">Configurar:  {{picto.nombre}}</h2>
+        <h2 (click)="irAConfigurarPagina( picto )">Configurar:  {{picto.nombre}}</h2>
       </ion-item>
-    </span>
+    </ion-item-sliding>
   </ion-list>
 
   <button ion-button

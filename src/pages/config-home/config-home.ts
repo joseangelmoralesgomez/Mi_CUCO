@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, reorderArray } from 'ionic-angular';
 
-/**
- * Generated class for the ConfigHomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Picto } from "../../interfaces/picto.inteface";
+
+import { AlmacenService } from "../../providers/almacen/almacen";
+
 
 @IonicPage()
 @Component({
@@ -15,7 +13,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ConfigHomePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl: ViewController,
+              public _almacen: AlmacenService ) {
+  }
+
+  cerrar_modal(){
+      this.viewCtrl.dismiss();
+  }
+
+  reordenar( indice ){
+    console.log(indice)
+    this._almacen.pictos = reorderArray (this._almacen.pictos, indice);
+    this._almacen.guardar_storage();
   }
 
   ionViewDidLoad() {

@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, reorderArray } from 'ionic-angular';
 
-/**
- * Generated class for the ConfigPaginaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Picto } from "../../interfaces/picto.inteface";
+
+import { AlmacenService } from "../../providers/almacen/almacen";
 
 @IonicPage()
 @Component({
@@ -14,12 +11,28 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'config-pagina.html',
 })
 export class ConfigPaginaPage {
+      pictoPagina:any ={};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl: ViewController,
+              public _almacen: AlmacenService) {
+    this.pictoPagina = this.navParams.get("picto")
+  }
+
+  cerrar_modal(){
+      this.viewCtrl.dismiss();
+  }
+
+  reordenar( indice ){
+    console.log(indice)
+    this._almacen.pictos = reorderArray (this._almacen.pictos, indice);
+    this._almacen.guardar_storage();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfigPaginaPage');
+    console.log('Picto Home: ', this.pictoPagina.pagina, '  Posicón: ',this.pictoPagina.posicion);
   }
 
 }

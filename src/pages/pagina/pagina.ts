@@ -21,9 +21,8 @@ export class PaginaPage {
     this.pictoHome = this.navParams.get("picto");
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PaginaPage');
-    console.log("Página de pictoHome: ",this.pictoHome.pagina, " Posición de pictoHome: ", this.pictoHome.posicion)
+  irAPagina ( picto : Picto ){
+      this.navCtrl.push (PaginaPage, {"picto":picto})
   }
 
   mostar_modal(){
@@ -31,4 +30,8 @@ export class PaginaPage {
       modal.present();
   }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad PaginaPage');
+    console.log("Página de pictoHome: ",this.pictoHome.pagina, " Posición de pictoHome: ", this.pictoHome.posicion)
+  }
 }

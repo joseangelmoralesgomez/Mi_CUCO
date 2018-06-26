@@ -9,6 +9,7 @@
 
 
 <ion-content class="card-background-page">
+
     <span *ngFor="let picto of this._almacen.pictos; let i=index">
       <ion-card *ngIf="pictoHome.posicion==picto.pagina">
           <img [src]="picto.img"/>
@@ -17,6 +18,7 @@
           </ion-card-content>
       </ion-card>
     </span>
+
     <ion-fab right bottom>
         <button ion-fab
                 color="danger"

@@ -40,27 +40,27 @@ export var PICTOS = [
 
 // Pictos poo defecto para la subpágina 01
       {
-        nombre: "Página 01",
+        nombre: "Página 01 - Posición 6",
         img: "assets/pictos/mesiento.jpg",
+        posicion: 6,
+        pagina: 1
+      },
+      {
+        nombre: "Página 01 -  Posición 7",
+        img: "assets/pictos/cole.jpg",
         posicion: 7,
         pagina: 1
       },
       {
-        nombre: "Página 01",
+        nombre: "Página 01 -  Posición 8",
         img: "assets/pictos/mesiento.jpg",
-        posicion: 7,
+        posicion: 8,
         pagina: 1
       },
       {
-        nombre: "Página 01",
-        img: "assets/pictos/mesiento.jpg",
-        posicion: 7,
-        pagina: 1
-      },
-      {
-        nombre: "Página 01",
-        img: "assets/pictos/mesiento.jpg",
-        posicion: 7,
+        nombre: "Página 01 - Posición 9",
+        img: "assets/pictos/cole.jpg",
+        posicion: 9,
         pagina: 1
       },
 

@@ -29,7 +29,9 @@ export class ConfigPage {
         this.viewCtrl.dismiss();
     }
 
-    configurarPagina ( picto : Picto ){
+    irAConfigurarPagina ( picto : Picto ){
         this.navCtrl.push (ConfigPaginaPage, {"picto":picto})
     }
+
+
 }
