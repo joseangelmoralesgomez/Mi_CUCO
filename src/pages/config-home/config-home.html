@@ -3,10 +3,10 @@
   <ion-navbar>
     <ion-title>config-home</ion-title>
     <ion-buttons end>
-        <button ion-button
-                (click)="cerrar_modal()">
-            Cerrar
-        </button>
+      <button ion-button
+              (click)="cerrar_modal()">
+        <ion-icon name="close-circle"> Cerrar</ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 
@@ -14,6 +14,12 @@
 
 
 <ion-content>
+
+  <div text-center>
+    <br />
+    <p>Los pictogramas de la página principal, sólo se pueden cambiar por otros.</p>
+  </div>
+
   <ion-list reorder="true" (ionItemReorder)="reordenar( $event )">
     <ion-item-sliding  *ngFor="let picto of this._almacen.pictos; let i=index">
 

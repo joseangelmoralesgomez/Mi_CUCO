@@ -3,10 +3,10 @@
   <ion-navbar>
     <ion-title>Configuración Mi CUCO</ion-title>
     <ion-buttons end>
-        <button ion-button
-                (click)="cerrar_modal()">
-            Cerrar
-        </button>
+      <button ion-button
+              (click)="cerrar_modal()">
+        <ion-icon name="close-circle"> Cerrar</ion-icon>
+      </button>
     </ion-buttons>
   </ion-navbar>
 
@@ -16,14 +16,14 @@
 <ion-content>
 
   <ion-list>
-    <ion-item>
-      <ion-avatar item-start>
-        <img src = "../../assets/pictos/MiCUCO.jpg"
-             [navPush]="paginaHome"/>
-      </ion-avatar>
-      <h2 [navPush]="configHome">Configurar: Página principal</h2>
-    </ion-item>
     <ion-item-sliding *ngFor="let picto of this._almacen.pictos; let i=index">
+      <ion-item *ngIf="picto.pagina==10 ">
+        <ion-avatar item-start>
+          <img [src]="picto.img"
+               [navPush]="paginaHome"/>
+        </ion-avatar>
+        <h2 [navPush]="configHome">Configurar:  {{picto.nombre}}</h2>
+      </ion-item>
       <ion-item *ngIf="picto.pagina==0">
         <ion-avatar item-start>
           <img [src]="picto.img"
