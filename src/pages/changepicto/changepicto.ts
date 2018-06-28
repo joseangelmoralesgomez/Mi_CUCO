@@ -6,6 +6,7 @@ import { ImagePicker, ImagePickerOptions } from '@ionic-native/image-picker';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
 
+import { Picto } from "../../interfaces/picto.inteface";
 import { AlmacenService } from "../../providers/almacen/almacen";
 
 @IonicPage()
@@ -18,8 +19,10 @@ export class ChangepictoPage {
   titulo: string = "";
   imgPreview: string = "";
   imgURI: string = "";
-  pag: number;
+  posicion: number;
+  pagina: number;
   pictoCambiar:any ={};
+  i: number;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -29,14 +32,18 @@ export class ChangepictoPage {
               private fileChooser: FileChooser,
               private filePath: FilePath,
               public _almacen: AlmacenService )  {
-    let pagina = this.navParams.get("indexPagina");
-    console.log("en el constructor de addpicto el valor de página: n", pagina);
-    this.pag = pagina
+    let picto = this.navParams.get("picto");
+    this.pictoCambiar = picto;
+    this.titulo = this.pictoCambiar.nombre;
+    this.imgURI = this.pictoCambiar.img;
+    this.posicion = this.pictoCambiar.posicion;
+    this.pagina = this.pictoCambiar.pagina;
+    console.log ("Picto a editar:", this.titulo, this.imgURI, this.posicion, this.pagina);
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddpictoPage');
-    console.log("Página de pictoPagina: ",this.pag)
+    console.log("Nombre del picto a cambiar: ",this.pictoCambiar.nombre)
   }
 
   cerrar(){
@@ -119,20 +126,29 @@ export class ChangepictoPage {
       	.catch(e => alert('uri'+JSON.stringify(e)));
   }
 
+  borrarPicto( picto:Picto){
+    console.log("Entramos en borrar picto, el que hay que borrar es el : ",picto.posicion)
+    this.i= this._almacen.pictos.indexOf(picto);
+    console.log("Posición del picto a borrar ",this.i);
+    this._almacen.pictos.splice(this.i, 1);
+    this._almacen.guardar_storage();
+  }
 
 
   guardar_picto( ){
       let picto = {
           img: this.imgURI,
           nombre: this.titulo,
-          posicion: this._almacen.pictos.length,
-          pagina: this.pag
+          posicion: this.pictoCambiar.posicion,
+          pagina: this.pictoCambiar.pagina
       }
       console.log("Posición: ",picto.posicion);
-      console.log("Página en el picto: ",picto.pagina, "Página que hemos recogido",this.pag);
+      console.log("Página en el picto: ",picto.pagina, "Página que hemos recogido",this.pagina);
       console.log ("guardando picto:", picto.img, picto.nombre, picto.posicion, picto.pagina);
 
-      this._almacen.pictos.splice(this._almacen.pictos.length, 0,picto);
+      this.i= this._almacen.pictos.indexOf(this.pictoCambiar);
+      console.log("Dómde debería escribirse ",this.i);
+      this._almacen.pictos.splice(this.i, 1, picto);
       this._almacen.guardar_storage();
       console.log ("guardado en el almacén", this._almacen);
       this.cerrar()

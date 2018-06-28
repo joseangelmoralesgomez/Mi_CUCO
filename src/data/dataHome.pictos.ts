@@ -48,43 +48,43 @@ export var PICTOS = [
 
 // Pictos poo defecto para la subpágina 01
   {
-    nombre: "Página 01 - Posición 6",
+    nombre: "Página 01 - Enla tabla el 07",
     img: "assets/pictos/mesiento.jpg",
-    posicion: 6,
-    pagina: 1
-  },
-  {
-    nombre: "Página 01 -  Posición 7",
-    img: "assets/pictos/cole.jpg",
     posicion: 7,
     pagina: 1
   },
   {
-    nombre: "Página 01 -  Posición 8",
-    img: "assets/pictos/mesiento.jpg",
+    nombre: "Página 01 -  Enla tabla el 08",
+    img: "assets/pictos/cole.jpg",
     posicion: 8,
     pagina: 1
   },
   {
-    nombre: "Página 01 - Posición 9",
-    img: "assets/pictos/cole.jpg",
+    nombre: "Página 01 -  Enla tabla el 09",
+    img: "assets/pictos/mesiento.jpg",
     posicion: 9,
+    pagina: 1
+  },
+  {
+    nombre: "Página 01 - Enla tabla el 10",
+    img: "assets/pictos/cole.jpg",
+    posicion: 10,
     pagina: 1
   },
 
 // Pictos poo defecto para la subpágina 02
   {
-    nombre: "PÁGINA 02",
+    nombre: "PÁGINA 02 - Enla tabla el 11",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 8,
+    posicion: 11,
     pagina: 2
   },
 
 // Pictos poo defecto para la subpágina 03
   {
-    nombre: "PÁGINA 03",
+    nombre: "PÁGINA 03 - Enla tabla el 12",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 9,
+    posicion: 12,
     pagina: 3
   },
 
@@ -92,7 +92,7 @@ export var PICTOS = [
   {
     nombre: "PÁGINA 04",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 10,
+    posicion: 13,
     pagina: 4
   },
 
@@ -100,7 +100,7 @@ export var PICTOS = [
   {
     nombre: "PÁGINA 05",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 11,
+    posicion: 14,
     pagina: 5
   },
 
@@ -108,7 +108,7 @@ export var PICTOS = [
   {
     nombre: "PÁGINA 06",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 12,
+    posicion: 15,
     pagina: 6
   },
 ];

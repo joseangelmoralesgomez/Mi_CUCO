@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, reorderArray } from 'ionic-angular';
 
+import { ChangepictoPage } from "../../pages/index.pages";
+import { Picto } from "../../interfaces/picto.inteface";
 import { AlmacenService } from "../../providers/almacen/almacen";
 
 
@@ -10,11 +12,13 @@ import { AlmacenService } from "../../providers/almacen/almacen";
   templateUrl: 'config-home.html',
 })
 export class ConfigHomePage {
+  pictoPagina:any ={};
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
               public viewCtrl: ViewController,
               public _almacen: AlmacenService ) {
+    this.pictoPagina = this.navParams.get("picto")
   }
 
   cerrar_modal(){
@@ -27,14 +31,10 @@ export class ConfigHomePage {
     this._almacen.guardar_storage();
   }
 
-  cambiarPicto (index:number){
-    console.log (index);
+  editarPicto ( picto : Picto ){
+      this.navCtrl.push (ChangepictoPage, {"picto":picto})
   }
 
-  irAddPicto ( indexPagina ){
-    console.log ("Desde Config Pagina - Página en la que añadir el picto:", indexPagina);
-    this.navCtrl.push (AddpictoPage, {indexPagina})
-  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfigHomePage');

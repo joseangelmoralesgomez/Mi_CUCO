@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, reorderArray, ModalController } from 'ionic-angular';
 
-import { AddpictoPage } from "../../pages/index.pages";
+import { AddpictoPage, ChangepictoPage } from "../../pages/index.pages";
 import { Picto } from "../../interfaces/picto.inteface";
 import { AlmacenService } from "../../providers/almacen/almacen";
 
@@ -12,6 +12,9 @@ import { AlmacenService } from "../../providers/almacen/almacen";
 })
 export class ConfigPaginaPage {
       pictoPagina:any ={};
+      pictoBorrar:any ={};
+      i:number =0;
+      pictoABorrar:number;
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -32,8 +35,9 @@ export class ConfigPaginaPage {
   }
 
   borrarPicto( picto:Picto){
-    console.log("Picto a borrar del storage: ",picto.posicion)
-    this._almacen.pictos.splice(picto.posicion, 1);
+    console.log("Entramos en borrar picto, el que hay que borrar es el : ",picto.posicion)
+    this.i= this._almacen.pictos.indexOf(picto);
+    this._almacen.pictos.splice(this.i, 1);
     this._almacen.guardar_storage();
   }
 
@@ -47,9 +51,10 @@ export class ConfigPaginaPage {
     this.navCtrl.push (AddpictoPage, {indexPagina})
   }
 
-  cambiarPicto (index:number){
-    console.log (index);
+  editarPicto ( picto : Picto ){
+      this.navCtrl.push (ChangepictoPage, {"picto":picto})
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfigPaginaPage');

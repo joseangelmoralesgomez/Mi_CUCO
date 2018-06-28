@@ -125,7 +125,7 @@ export class AddpictoPage {
       let picto = {
           img: this.imgURI,
           nombre: this.titulo,
-          posicion: this._almacen.pictos.length,
+          posicion: this._almacen.contador++,
           pagina: this.pag
       }
       console.log("Posición: ",picto.posicion);
@@ -134,7 +134,7 @@ export class AddpictoPage {
 
       this._almacen.pictos.splice(this._almacen.pictos.length, 0,picto);
       this._almacen.guardar_storage();
-      console.log ("guardado en el almacén", this._almacen);
+      console.log ("guardado en el almacén", this._almacen, "y elcontador es: ", this._almacen.contador);
       this.cerrar()
   }
 

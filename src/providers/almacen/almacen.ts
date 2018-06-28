@@ -9,6 +9,7 @@ import { Platform } from "ionic-angular";
 @Injectable()
 export class AlmacenService {
     pictos:Picto[] = [];
+    contador: number = 20;
 
     constructor( private paltform:Platform,
                  private storage:Storage) {
@@ -28,9 +29,17 @@ export class AlmacenService {
                             .then( pictos=>{
                                 if (pictos){
                                     this.pictos=pictos;
+                                    this.pictos = PICTOS.splice(0);
                                     resolve();
                                 }else{
                                     this.pictos = PICTOS.splice(0);
+                                }
+                            })
+                        this.storage.get("contador")
+                            .then( contador=>{
+                                if (contador){
+                                    this.contador=contador;
+                                    resolve();
                                 }
                             })
                     })
@@ -38,7 +47,8 @@ export class AlmacenService {
             }else{
                 // Estamos en el navegador
                 if ( localStorage.getItem("pictos") ){
-                    this.pictos = JSON.parse( localStorage.getItem("pictos") )
+                    this.pictos = JSON.parse( localStorage.getItem("pictos") );
+                    this.contador = JSON.parse( localStorage.getItem("contador") )
                 }else{
                     this.pictos = PICTOS.splice(0);
                 };
@@ -57,11 +67,13 @@ export class AlmacenService {
             this.storage.ready()
                 .then(()=>{
                     this.storage.set("pictos", this.pictos)
+                    this.storage.set("contador", this.contador)
                 });
-            console.log("Fin de guardar_storage", this.storage)
+            console.log("Fin de guardar_storage", this.storage, " Valor del contador", this.contador)
         }else{
             // Estamos en el un navegador
             localStorage.setItem("pictos", JSON.stringify(this.pictos));
+            localStorage.setItem("contador", JSON.stringify(this.contador));
             console.log("Fin de guardar_storage", localStorage)
         }
     }
