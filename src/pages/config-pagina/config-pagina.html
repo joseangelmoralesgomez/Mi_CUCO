@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Congigurar {{pictoPagina.nombre}}</ion-title>
+    <ion-title>Configurar {{pictoPagina.nombre}}</ion-title>
     <ion-buttons end>
         <button ion-button
                 (click)="cerrar_modal()">
@@ -23,45 +23,38 @@
   <div text-center>
     <br />
     <button ion-button
-            (click)="mostar_modal()">
+             (click)="irAddPicto ( pictoPagina.posicion )">
         <ion-icon name="add-circle"> Añadir pictograma </ion-icon>
     </button>
-    <p>El nuevo pictograma se añadirá al final.</p>
-    <p>Puede reordenar los pictogramas arrastrando y dejándolo en la nueva posición</p>
   </div>
 
-  <ion-list  reorder="true" (ionItemReorder)="reordenar( $event )">
-    <ion-item-sliding  *ngFor="let picto of this._almacen.pictos; let i=index">
+  <div>
+    <br />
+    <ion-list  reorder="true" (ionItemReorder)="reordenar( $event )">
+      <ion-item-sliding  *ngFor="let picto of this._almacen.pictos; let i=index">
 
-      <ion-item *ngIf="picto.pagina==pictoPagina.posicion">
-        <ion-avatar item-start>
-          <img [src]="picto.img"/>
-        </ion-avatar>
-        <h2>{{picto.nombre}}</h2>
-      </ion-item>
+        <ion-item *ngIf="picto.pagina==pictoPagina.posicion">
+          <ion-avatar item-start>
+            <img [src]="picto.img"/>
+          </ion-avatar>
+          <h2>{{picto.nombre}}</h2>
+        </ion-item>
 
-      <ion-item-options side="right">
-        <button ion-button color="secondary"
-                (click)="cambiarPicto( picto.posicion )">
-          <ion-icon name="images"></ion-icon>
-          Cambiar
-        </button>
+        <ion-item-options side="right">
+          <button ion-button color="secondary"
+                  (click)="cambiarPicto( picto.posicion )">
+            <ion-icon name="images"></ion-icon>
+            Cambiar
+          </button>
 
-        <button ion-button color="danger"
-                (click)="borrarPicto( picto )">
-          <ion-icon name="thumbs-up"></ion-icon>
-          Borrar
-        </button>
-      </ion-item-options>
+          <button ion-button color="danger"
+                  (click)="borrarPicto( picto )">
+            <ion-icon name="trash"></ion-icon>
+            Borrar
+          </button>
+        </ion-item-options>
 
-    </ion-item-sliding>
-  </ion-list>
-
-  <div text-center>
-    <button ion-button
-            (click)="cerrar_modal()">
-        <ion-icon name="close-circle"> Cerrar</ion-icon>
-    </button>
+      </ion-item-sliding>
+    </ion-list>
   </div>
-
 </ion-content>

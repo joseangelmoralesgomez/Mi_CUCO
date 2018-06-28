@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 
 
 import { Picto } from "../../interfaces/picto.inteface";
-import { HomePage, PaginaPage, AboutPage, ConfigHomePage, ConfigPaginaPage} from "../../pages/index.pages";
+import { AboutPage, ConfigHomePage, ConfigPaginaPage} from "../../pages/index.pages";
 
 import { AlmacenService } from "../../providers/almacen/almacen";
 

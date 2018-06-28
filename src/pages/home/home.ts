@@ -21,7 +21,8 @@ export class HomePage {
   }
 
   irAPagina ( picto : Picto ){
-      this.navCtrl.push (PaginaPage, {"picto":picto})
+    console.log("Venimos de la home", picto.pagina)
+    this.navCtrl.push (PaginaPage, {"picto":picto});
   }
 
 /*  saltar_intro(){

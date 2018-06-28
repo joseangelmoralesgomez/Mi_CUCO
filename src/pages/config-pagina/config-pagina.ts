@@ -32,7 +32,7 @@ export class ConfigPaginaPage {
   }
 
   borrarPicto( picto:Picto){
-
+    console.log("Picto a borrar del storage: ",picto.posicion)
     this._almacen.pictos.splice(picto.posicion, 1);
     this._almacen.guardar_storage();
   }
@@ -41,6 +41,12 @@ export class ConfigPaginaPage {
     let modal = this.modalCtrl.create(AddpictoPage);
     modal.present();
   }
+
+  irAddPicto ( indexPagina ){
+    console.log ("Desde Config Pagina - Página en la que añadir el picto:", indexPagina);
+    this.navCtrl.push (AddpictoPage, {indexPagina})
+  }
+
   cambiarPicto (index:number){
     console.log (index);
   }

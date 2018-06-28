@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController, reorderArray } from 'ionic-angular';
 
-import { Picto } from "../../interfaces/picto.inteface";
-
 import { AlmacenService } from "../../providers/almacen/almacen";
 
 
@@ -27,6 +25,15 @@ export class ConfigHomePage {
     console.log(indice)
     this._almacen.pictos = reorderArray (this._almacen.pictos, indice);
     this._almacen.guardar_storage();
+  }
+
+  cambiarPicto (index:number){
+    console.log (index);
+  }
+
+  irAddPicto ( indexPagina ){
+    console.log ("Desde Config Pagina - Página en la que añadir el picto:", indexPagina);
+    this.navCtrl.push (AddpictoPage, {indexPagina})
   }
 
   ionViewDidLoad() {

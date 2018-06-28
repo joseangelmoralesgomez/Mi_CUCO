@@ -8,18 +8,18 @@ import { FilePath } from '@ionic-native/file-path';
 
 import { AlmacenService } from "../../providers/almacen/almacen";
 
-
 @IonicPage()
 @Component({
-  selector: 'page-addpicto',
-  templateUrl: 'addpicto.html',
+  selector: 'page-changepicto',
+  templateUrl: 'changepicto.html',
 })
 
-export class AddpictoPage {
+export class ChangepictoPage {
   titulo: string = "";
   imgPreview: string = "";
   imgURI: string = "";
   pag: number;
+  pictoCambiar:any ={};
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
