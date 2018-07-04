@@ -19,7 +19,7 @@ export class ChangepictoPage {
   titulo: string = "";
   imgPreview: string = "";
   imgURI: string = "";
-  posicion: number;
+  id: number;
   pagina: number;
   pictoCambiar:any ={};
   i: number;
@@ -36,9 +36,9 @@ export class ChangepictoPage {
     this.pictoCambiar = picto;
     this.titulo = this.pictoCambiar.nombre;
     this.imgURI = this.pictoCambiar.img;
-    this.posicion = this.pictoCambiar.posicion;
+    this.id = this.pictoCambiar.id;
     this.pagina = this.pictoCambiar.pagina;
-    console.log ("Picto a editar:", this.titulo, this.imgURI, this.posicion, this.pagina);
+    console.log ("Picto a editar:", this.titulo, this.imgURI, this.id, this.pagina);
   }
 
   ionViewDidLoad() {
@@ -127,7 +127,7 @@ export class ChangepictoPage {
   }
 
   borrarPicto( picto:Picto){
-    console.log("Entramos en borrar picto, el que hay que borrar es el : ",picto.posicion)
+    console.log("Entramos en borrar picto, el que hay que borrar es el : ",picto.id)
     this.i= this._almacen.pictos.indexOf(picto);
     console.log("Posición del picto a borrar ",this.i);
     this._almacen.pictos.splice(this.i, 1);
@@ -139,12 +139,12 @@ export class ChangepictoPage {
       let picto = {
           img: this.imgURI,
           nombre: this.titulo,
-          posicion: this.pictoCambiar.posicion,
+          id: this.pictoCambiar.id,
           pagina: this.pictoCambiar.pagina
       }
-      console.log("Posición: ",picto.posicion);
+      console.log("Posición: ",picto.id);
       console.log("Página en el picto: ",picto.pagina, "Página que hemos recogido",this.pagina);
-      console.log ("guardando picto:", picto.img, picto.nombre, picto.posicion, picto.pagina);
+      console.log ("guardando picto:", picto.img, picto.nombre, picto.id, picto.pagina);
 
       this.i= this._almacen.pictos.indexOf(this.pictoCambiar);
       console.log("Dómde debería escribirse ",this.i);

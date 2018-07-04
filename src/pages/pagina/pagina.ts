@@ -32,6 +32,6 @@ export class PaginaPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad PaginaPage');
-    console.log("Página de pictoHome: ",this.pictoHome.pagina, " Posición de pictoHome: ", this.pictoHome.posicion)
+    console.log("Página de pictoHome: ",this.pictoHome.pagina, " Posición de pictoHome: ", this.pictoHome.id)
   }
 }

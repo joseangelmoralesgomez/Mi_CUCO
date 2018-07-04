@@ -11,20 +11,12 @@
 <ion-content class="card-background-page">
 
     <span *ngFor="let picto of this._almacen.pictos; let i=index">
-      <ion-card *ngIf="pictoHome.posicion==picto.pagina">
+      <ion-card *ngIf="pictoHome.id==picto.pagina">
           <img [src]="picto.img"/>
           <ion-card-content text-align: center>
               <h1><strong>{{picto.nombre}}</strong></h1>
           </ion-card-content>
       </ion-card>
     </span>
-
-    <ion-fab right bottom>
-        <button ion-fab
-                color="danger"
-                (click)="mostar_modal()">
-                <ion-icon name="add"></ion-icon>
-        </button>
-    </ion-fab>
 
 </ion-content>

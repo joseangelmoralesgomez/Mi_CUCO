@@ -111,12 +111,12 @@ export class AddpictoPage {
       // get file path
       		this.filePath.resolveNativePath(imageData)
       		.then(file => {
-      			alert('file'+JSON.stringify(file));
+      			//alert('file'+JSON.stringify(file));
        			this.imgURI = file;
       		})
       		.catch(err => console.log(err));
       	})
-      	.catch(e => alert('uri'+JSON.stringify(e)));
+      	.catch(e => console.log(e) /*alert('uri'+JSON.stringify(e))*/);
   }
 
 
@@ -125,12 +125,12 @@ export class AddpictoPage {
       let picto = {
           img: this.imgURI,
           nombre: this.titulo,
-          posicion: this._almacen.contador++,
+          id: this._almacen.contador++,
           pagina: this.pag
       }
-      console.log("Posición: ",picto.posicion);
+      console.log("Posición: ",picto.id);
       console.log("Página en el picto: ",picto.pagina, "Página que hemos recogido",this.pag);
-      console.log ("guardando picto:", picto.img, picto.nombre, picto.posicion, picto.pagina);
+      console.log ("guardando picto:", picto.img, picto.nombre, picto.id, picto.pagina);
 
       this._almacen.pictos.splice(this._almacen.pictos.length, 0,picto);
       this._almacen.guardar_storage();

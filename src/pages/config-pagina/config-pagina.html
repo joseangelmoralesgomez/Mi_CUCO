@@ -4,7 +4,7 @@
     <ion-title>Configurar {{pictoPagina.nombre}}</ion-title>
     <ion-buttons end>
         <button ion-button
-                (click)="cerrar_modal()">
+                (click)="cerrar()">
             <ion-icon name="close-circle"> Cerrar</ion-icon>
         </button>
     </ion-buttons>
@@ -23,7 +23,7 @@
   <div text-center>
     <br />
     <button ion-button
-             (click)="irAddPicto ( pictoPagina.posicion )">
+             (click)="irAddPicto ( pictoPagina.id )">
         <ion-icon name="add-circle"> Añadir pictograma </ion-icon>
     </button>
   </div>
@@ -33,7 +33,7 @@
     <ion-list  reorder="true" (ionItemReorder)="reordenar( $event )">
       <ion-item-sliding  *ngFor="let picto of this._almacen.pictos; let i=index">
 
-        <ion-item *ngIf="picto.pagina==pictoPagina.posicion">
+        <ion-item *ngIf="picto.pagina==pictoPagina.id">
           <ion-avatar item-start>
             <img [src]="picto.img"/>
           </ion-avatar>

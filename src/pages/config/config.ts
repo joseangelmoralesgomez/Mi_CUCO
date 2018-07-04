@@ -25,7 +25,7 @@ export class ConfigPage {
                 public _almacen: AlmacenService ) {
     }
 
-    cerrar_modal(){
+    cerrar(){
         this.viewCtrl.dismiss();
     }
 

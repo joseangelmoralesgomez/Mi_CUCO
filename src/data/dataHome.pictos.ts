@@ -2,81 +2,88 @@
 export var PICTOS = [
 // Picto de la home
   {
-    nombre: "Página principal",
+    nombre: "Tablero principal",
     img: "assets/pictos/cuco.jpg",
-    posicion: 0,
+    id: 0,
     pagina: 10
   },
 // Pictos poo defecto para la home
   {
-    nombre: "Quiero",
-    img: "assets/pictos/quiero.jpg",
-    posicion: 1,
+    nombre: "Me siento",
+    img: "assets/pictos/mesiento.jpg",
+    id: 1,
     pagina: 0
   },
 
   {
-    nombre: "Me siento",
-    img: "assets/pictos/mesiento.jpg",
-    posicion: 2,
+    nombre: "Quiero",
+    img: "assets/pictos/quiero.jpg",
+    id: 2,
     pagina: 0
   },
   {
     nombre: "Jugar",
     img: "assets/pictos/jugar.jpg",
-    posicion: 3,
+    id: 3,
     pagina: 0
   },
   {
     nombre: "Familia",
     img: "assets/pictos/familia.jpg",
-    posicion: 4,
+    id: 4,
     pagina: 0
   },
   {
     nombre: "Hoy Viajo Con",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 5,
+    id: 5,
     pagina: 0
   },
   {
     nombre: "Cole",
     img: "assets/pictos/cole.jpg",
-    posicion: 6,
+    id: 6,
     pagina: 0
   },
 
 // Pictos poo defecto para la subpágina 01
   {
-    nombre: "Página 01 - Enla tabla el 07",
-    img: "assets/pictos/mesiento.jpg",
-    posicion: 7,
+    nombre: "Muy contento",
+    img: "assets/pictos/muycontento.jpg",
+    id: 7,
     pagina: 1
   },
   {
-    nombre: "Página 01 -  Enla tabla el 08",
-    img: "assets/pictos/cole.jpg",
-    posicion: 8,
+    nombre: "Contento",
+    img: "assets/pictos/contento.jpg",
+    id: 8,
     pagina: 1
   },
   {
-    nombre: "Página 01 -  Enla tabla el 09",
-    img: "assets/pictos/mesiento.jpg",
-    posicion: 9,
+    nombre: "No lo sé",
+    img: "assets/pictos/nolose.jpg",
+    id: 9,
     pagina: 1
   },
   {
-    nombre: "Página 01 - Enla tabla el 10",
-    img: "assets/pictos/cole.jpg",
-    posicion: 10,
+    nombre: "Mal",
+    img: "assets/pictos/mal.jpg",
+    id: 10,
     pagina: 1
   },
+    {
+    nombre: "Enfadado",
+    img: "assets/pictos/enfadado.jpg",
+    id: 16,
+    pagina: 1
+  },
+
 
 // Pictos poo defecto para la subpágina 02
   {
     nombre: "PÁGINA 02 - Enla tabla el 11",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 11,
+    id: 11,
     pagina: 2
   },
 
@@ -84,7 +91,7 @@ export var PICTOS = [
   {
     nombre: "PÁGINA 03 - Enla tabla el 12",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 12,
+    id: 12,
     pagina: 3
   },
 
@@ -92,7 +99,7 @@ export var PICTOS = [
   {
     nombre: "PÁGINA 04",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 13,
+    id: 13,
     pagina: 4
   },
 
@@ -100,7 +107,7 @@ export var PICTOS = [
   {
     nombre: "PÁGINA 05",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 14,
+    id: 14,
     pagina: 5
   },
 
@@ -108,7 +115,7 @@ export var PICTOS = [
   {
     nombre: "PÁGINA 06",
     img: "assets/pictos/hoyViajoCon.jpg",
-    posicion: 15,
+    id: 15,
     pagina: 6
   },
 ];

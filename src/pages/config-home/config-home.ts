@@ -21,7 +21,7 @@ export class ConfigHomePage {
     this.pictoPagina = this.navParams.get("picto")
   }
 
-  cerrar_modal(){
+  cerrar(){
       this.viewCtrl.dismiss();
   }
 

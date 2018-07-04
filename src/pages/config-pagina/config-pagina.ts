@@ -24,7 +24,7 @@ export class ConfigPaginaPage {
     this.pictoPagina = this.navParams.get("picto")
   }
 
-  cerrar_modal(){
+  cerrar(){
       this.viewCtrl.dismiss();
   }
 
@@ -35,7 +35,7 @@ export class ConfigPaginaPage {
   }
 
   borrarPicto( picto:Picto){
-    console.log("Entramos en borrar picto, el que hay que borrar es el : ",picto.posicion)
+    console.log("Entramos en borrar picto, el que hay que borrar es el : ",picto.id)
     this.i= this._almacen.pictos.indexOf(picto);
     this._almacen.pictos.splice(this.i, 1);
     this._almacen.guardar_storage();
@@ -58,7 +58,7 @@ export class ConfigPaginaPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ConfigPaginaPage');
-    console.log('Picto Home: ', this.pictoPagina.pagina, '  Posicón: ',this.pictoPagina.posicion);
+    console.log('Picto Home: ', this.pictoPagina.pagina, '  Posicón: ',this.pictoPagina.id);
   }
 
 }
