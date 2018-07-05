@@ -11,7 +11,6 @@ import { PaginaPage, AddpictoPage, AboutPage, ConfigPage, HomePage, TabsPage, Co
 // Plugins
 import { IonicStorageModule } from '@ionic/storage';
 import { Camera } from '@ionic-native/camera';
-import { ImagePicker } from '@ionic-native/image-picker';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
 
@@ -55,7 +54,6 @@ import { AlmacenService } from '../providers/almacen/almacen';
     StatusBar,
     SplashScreen,
     Camera,
-    ImagePicker,
     FileChooser,
     FilePath,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

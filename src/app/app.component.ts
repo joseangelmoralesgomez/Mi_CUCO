@@ -17,7 +17,7 @@ export class MyApp {
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen,
              private _almacen:AlmacenService) {
     platform.ready().then(() => {
-        this._almacen.cargar_storage();
+        this._almacen.cargarStorage();
         // Okay, so the platform is ready and our plugins are available.
         // Here you can do any higher level native things you might need.
         statusBar.styleDefault();

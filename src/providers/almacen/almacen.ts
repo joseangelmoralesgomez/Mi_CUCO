@@ -16,7 +16,7 @@ export class AlmacenService {
         console.log('Hola Servicio de Almacén')
     }
 
-    cargar_storage(){
+    cargarStorage(){
         console.log('Inicio Cargar Storage')
         let lapromesa = new Promise ( (resolve, reject)=>{
             if ( this.paltform.is("cordova") ){
@@ -61,7 +61,7 @@ export class AlmacenService {
     }
 
 
-    guardar_storage(){
+    guardarStorage(){
         if ( this.paltform.is("cordova") ){
             // Estamos en un smartphone
             this.storage.ready()
@@ -69,12 +69,12 @@ export class AlmacenService {
                     this.storage.set("pictos", this.pictos)
                     this.storage.set("contador", this.contador)
                 });
-            console.log("Fin de guardar_storage", this.storage, " Valor del contador", this.contador)
+            console.log("Fin de guardarStorage", this.storage, " Valor del contador", this.contador)
         }else{
             // Estamos en el un navegador
             localStorage.setItem("pictos", JSON.stringify(this.pictos));
             localStorage.setItem("contador", JSON.stringify(this.contador));
-            console.log("Fin de guardar_storage", localStorage)
+            console.log("Fin de guardarStorage", localStorage)
         }
     }
 }

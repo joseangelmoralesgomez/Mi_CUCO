@@ -28,7 +28,7 @@ export class ConfigHomePage {
   reordenar( indice ){
     console.log(indice)
     this._almacen.pictos = reorderArray (this._almacen.pictos, indice);
-    this._almacen.guardar_storage();
+    this._almacen.guardarStorage();
   }
 
   editarPicto ( picto : Picto ){

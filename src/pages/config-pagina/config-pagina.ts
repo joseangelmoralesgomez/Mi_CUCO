@@ -31,17 +31,17 @@ export class ConfigPaginaPage {
   reordenar( indice ){
     console.log(indice)
     this._almacen.pictos = reorderArray (this._almacen.pictos, indice);
-    this._almacen.guardar_storage();
+    this._almacen.guardarStorage();
   }
 
   borrarPicto( picto:Picto){
     console.log("Entramos en borrar picto, el que hay que borrar es el : ",picto.id)
     this.i= this._almacen.pictos.indexOf(picto);
     this._almacen.pictos.splice(this.i, 1);
-    this._almacen.guardar_storage();
+    this._almacen.guardarStorage();
   }
 
-  mostar_modal(){
+  mostarModal(){
     let modal = this.modalCtrl.create(AddpictoPage);
     modal.present();
   }

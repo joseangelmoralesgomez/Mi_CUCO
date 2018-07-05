@@ -50,7 +50,7 @@ export class ChangepictoPage {
       this.viewCtrl.dismiss();
   }
 
-  mostrar_camara(){
+  mostrarCamara(){
       const options: CameraOptions = {
         quality: 50,
         destinationType: this.camera.DestinationType.FILE_URI,
@@ -112,7 +112,7 @@ export class ChangepictoPage {
       });
   }
 
-  seleccionar_fichero(){
+  seleccionarFichero(){
       this.fileChooser.open().then((imageData) => {
       alert('uri'+JSON.stringify(imageData));
       // get file path
@@ -131,11 +131,11 @@ export class ChangepictoPage {
     this.i= this._almacen.pictos.indexOf(picto);
     console.log("Posición del picto a borrar ",this.i);
     this._almacen.pictos.splice(this.i, 1);
-    this._almacen.guardar_storage();
+    this._almacen.guardarStorage();
   }
 
 
-  guardar_picto( ){
+  guardarPicto( ){
       let picto = {
           img: this.imgURI,
           nombre: this.titulo,
@@ -149,7 +149,7 @@ export class ChangepictoPage {
       this.i= this._almacen.pictos.indexOf(this.pictoCambiar);
       console.log("Dómde debería escribirse ",this.i);
       this._almacen.pictos.splice(this.i, 1, picto);
-      this._almacen.guardar_storage();
+      this._almacen.guardarStorage();
       console.log ("guardado en el almacén", this._almacen);
       this.cerrar()
   }
