@@ -74,48 +74,7 @@ export var PICTOS = [
     {
     nombre: "Enfadado",
     img: "assets/pictos/enfadado.jpg",
-    id: 16,
+    id: 11,
     pagina: 1
   },
-
-
-// Pictos poo defecto para la subpágina 02
-  {
-    nombre: "PÁGINA 02 - Enla tabla el 11",
-    img: "assets/pictos/hoyViajoCon.jpg",
-    id: 11,
-    pagina: 2
-  },
-
-// Pictos poo defecto para la subpágina 03
-  {
-    nombre: "PÁGINA 03 - Enla tabla el 12",
-    img: "assets/pictos/hoyViajoCon.jpg",
-    id: 12,
-    pagina: 3
-  },
-
-// Pictos poo defecto para la subpágina 04
-  {
-    nombre: "PÁGINA 04",
-    img: "assets/pictos/hoyViajoCon.jpg",
-    id: 13,
-    pagina: 4
-  },
-
-// Pictos poo defecto para la subpágina 05
-  {
-    nombre: "PÁGINA 05",
-    img: "assets/pictos/hoyViajoCon.jpg",
-    id: 14,
-    pagina: 5
-  },
-
-// Pictos poo defecto para la subpágina 06
-  {
-    nombre: "PÁGINA 06",
-    img: "assets/pictos/hoyViajoCon.jpg",
-    id: 15,
-    pagina: 6
-  },
-];
+  ];

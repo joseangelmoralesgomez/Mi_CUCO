@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
 import { Camera, CameraOptions } from '@ionic-native/camera';
-import { ImagePickerOptions } from '@ionic-native/image-picker';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
 
@@ -66,7 +65,7 @@ export class AddpictoPage {
 
   seleccionarFichero(){
       this.fileChooser.open().then((imageData) => {
-      alert('uri'+JSON.stringify(imageData));
+      //alert('uri'+JSON.stringify(imageData));
       // get file path
       		this.filePath.resolveNativePath(imageData)
       		.then(file => {
@@ -93,6 +92,10 @@ export class AddpictoPage {
       this._almacen.guardarStorage();
       console.log ("guardado en el almacén", this._almacen, "y elcontador es: ", this._almacen.contador);
       this.cerrar()
+  }
+
+  avisoGuardarPicto(){
+    alert("Seleccione una imagen para añadir un nuevo Picto");
   }
 
 }

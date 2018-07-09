@@ -17,7 +17,13 @@
 
   <div text-center><br />
     <button ion-button
+            *ngIf="imgURI"
             (click)="guardarPicto()">
+        <ion-icon name="add-circle"> Guardar y cerrar </ion-icon>
+    </button>
+    <button ion-button
+            *ngIf="!imgURI"
+            (click)="avisoGuardarPicto()">
         <ion-icon name="add-circle"> Guardar y cerrar </ion-icon>
     </button>
   </div>
