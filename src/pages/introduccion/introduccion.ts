@@ -10,7 +10,7 @@ import { HomePage } from '../home/home';
   selector: 'page-introduccion',
   templateUrl: 'introduccion.html',
 })
-export class IntroduccionPage {
+export class Introduccion {
   slides:any[] = [
     {
       title: "Bienvenido a...!!!",

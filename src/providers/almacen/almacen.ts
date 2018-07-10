@@ -30,7 +30,6 @@ export class AlmacenService {
                             .then( pictos=>{
                                 if (pictos){
                                     this.pictos=pictos;
-                                    this.pictos = PICTOS.splice(0);
                                     resolve();
                                 }else{
                                     this.pictos = PICTOS.splice(0);
