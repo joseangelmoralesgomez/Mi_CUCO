@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 
-import { PaginaPage, AboutPage, ConfigPage } from "../../pages/index.pages";
+import { PaginaPage, ConfigPage, Introduccion } from "../../pages/index.pages";
 import { Picto } from "../../interfaces/picto.inteface";
 import { AlmacenService } from "../../providers/almacen/almacen";
 
@@ -12,7 +12,7 @@ import { AlmacenService } from "../../providers/almacen/almacen";
 export class HomePage {
 //  pictos:Picto[] = [];
   muestra_botones:boolean = false;
-  acerca_de:any = AboutPage;
+  manual:any = Introduccion;
   configuracion:any = ConfigPage;
 
   constructor(public navCtrl: NavController,

@@ -24,12 +24,17 @@
         </ion-toolbar>
 
         <img src="assets/pictos/bienvenida04.png" class="slide-image"/>
-        <h2 class="slide-title">¿Listo para empezar?</h2>
+        <h2 class="slide-title">Tus fotos son tus pictos</h2>
+        <p>Cuando editamos un pictograma de un tablero, como cuando quermos añadir uno nuevo a un Tablero de Sección, podemos tomar una imagen del banco de imágenes del dispositivo, como hacer una foto, que será la que utilizaremos como nuevo picto. <br />La imagen es obligatoria, el título opcional.</p>
 
         <button ion-button large clear icon-right color="primary"
                 (click)="saltar_tutorial()">
           Continuar
           <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+        <button ion-button block
+                [navPush]="gdpr">
+          GDPR / RGPD Protección de datos
         </button>
 
       </ion-slide>

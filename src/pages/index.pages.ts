@@ -7,3 +7,5 @@ export { AddpictoPage } from "./addpicto/addpicto";
 export { ConfigHomePage } from "./config-home/config-home";
 export { ConfigPaginaPage } from "./config-pagina/config-pagina";
 export { ChangepictoPage } from "./changepicto/changepicto";
+export { Introduccion } from "./introduccion/introduccion";
+export { GDPRPage } from "./gdpr/gdpr";

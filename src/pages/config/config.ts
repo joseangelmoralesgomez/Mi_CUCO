@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 
 
 import { Picto } from "../../interfaces/picto.inteface";
-import { AboutPage, ConfigHomePage, ConfigPaginaPage} from "../../pages/index.pages";
+import { AboutPage, ConfigHomePage, ConfigPaginaPage, GDPRPage } from "../../pages/index.pages";
 
 import { AlmacenService } from "../../providers/almacen/almacen";
 
@@ -17,6 +17,7 @@ export class ConfigPage {
     imgPreview: string = "";
     imgURI: string = "";
     acerca_de:any = AboutPage;
+    gdpr:any = GDPRPage;
     configHome:any = ConfigHomePage;
 
     constructor(public navCtrl: NavController,

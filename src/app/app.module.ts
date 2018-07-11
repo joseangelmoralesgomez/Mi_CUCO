@@ -6,7 +6,7 @@ import { MyApp } from './app.component';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { PaginaPage, AddpictoPage, AboutPage, ConfigPage, HomePage, TabsPage, ConfigHomePage, ConfigPaginaPage, ChangepictoPage } from "../pages/index.pages";
+import { PaginaPage, AddpictoPage, AboutPage, ConfigPage, HomePage, TabsPage, ConfigHomePage, ConfigPaginaPage, ChangepictoPage, Introduccion, GDPRPage } from "../pages/index.pages";
 
 // Plugins
 import { IonicStorageModule } from '@ionic/storage';
@@ -30,7 +30,9 @@ import { AlmacenService } from '../providers/almacen/almacen';
     PaginaPage,
     ConfigHomePage,
     ConfigPaginaPage,
-    ChangepictoPage
+    ChangepictoPage,
+    Introduccion,
+    GDPRPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,9 @@ import { AlmacenService } from '../providers/almacen/almacen';
     PaginaPage,
     ConfigHomePage,
     ConfigPaginaPage,
-    ChangepictoPage
+    ChangepictoPage,
+    Introduccion,
+    GDPRPage
   ],
   providers: [
     StatusBar,
