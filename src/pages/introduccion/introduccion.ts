@@ -5,7 +5,7 @@ import { AlmacenService } from "../../providers/almacen/almacen";
 
 import { HomePage, GDPRPage } from "../../pages/index.pages";
 
-
+@IonicPage()
 @Component({
   selector: 'page-introduccion',
   templateUrl: 'introduccion.html',

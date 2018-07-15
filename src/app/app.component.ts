@@ -18,11 +18,6 @@ export class MyApp {
     platform.ready().then(() => {
         this._almacen.cargarStorage().
           then( ()=>{
-/*            if (this._almacen.bienvenida) {
-              this.rootPage = "Introduccion";
-            }else{
-              this.rootPage = HomePage;
-            } */
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
