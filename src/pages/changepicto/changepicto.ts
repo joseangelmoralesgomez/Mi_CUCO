@@ -72,53 +72,11 @@ export class ChangepictoPage {
       });
   }
 
-  seleccionar_imagen_camara(){
-      const options: CameraOptions = {
-        quality: 50,
-        destinationType: this.camera.DestinationType.NATIVE_URI,
-        encodingType: this.camera.EncodingType.JPEG,
-        mediaType: this.camera.MediaType.PICTURE,
-        sourceType: this.camera.PictureSourceType.SAVEDPHOTOALBUM,
-      }
-
-      this.camera.getPicture(options).then((imageData) => {
-       // imageData is either a base64 encoded string or a file URI
-       // If it's base64:
-      this.imgPreview = 'data:image/jpeg;base64,' + imageData;
-      this.imgURI = imageData;
-      console.log("la imageData:", imageData);
-      console.log("la imgURI:", this.imgURI);
-      }, (err) => {
-       // Handle error
-       console.log("Error en cámara", JSON.stringify(err));
-      });
-  }
-
-
-  seleccionar_imagen_galeria(){
-      let options: ImagePickerOptions ={
-          quality: 50,
-          outputType: 0,
-          maximumImagesCount: 1
-      }
-      this.imagePicker.getPictures(options).then((results) => {
-        for (var i = 0; i < results.length; i++) {
-            console.log('Image URI: ' + results[i]);
-            this.imgURI = results[i];
-            console.log("la imgURI:" + this.imgURI);
-        }
-      }, (err) => {
-          console.log("Error en selección de imágenes", JSON.stringify(err));
-      });
-  }
-
   seleccionarFichero(){
       this.fileChooser.open().then((imageData) => {
-      alert('uri'+JSON.stringify(imageData));
       // get file path
       		this.filePath.resolveNativePath(imageData)
       		.then(file => {
-      			alert('file'+JSON.stringify(file));
        			this.imgURI = file;
       		})
       		.catch(err => console.log(err));
